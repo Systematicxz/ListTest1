@@ -4,8 +4,8 @@ class ListViewController: UIViewController, PokemonManagerDelegate, UITableViewD
     
     var tablePokemon = UITableView()
     var pokemonManager = PokemonManager()
-    var pokemons: [Pokemon] = []
-
+    var pokemons: [PokemonData.Pokemon] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -17,8 +17,7 @@ class ListViewController: UIViewController, PokemonManagerDelegate, UITableViewD
         pokemonManager.delegate = self
         pokemonManager.showPokemon()
     }
-    
-    func PokemonList(list: [Pokemon]) {
+    func getPokemonList(list: [PokemonData.Pokemon]) {
         pokemons = list
         tablePokemon.reloadData()
     }
@@ -34,3 +33,4 @@ class ListViewController: UIViewController, PokemonManagerDelegate, UITableViewD
         return cell
     }
 }
+

@@ -12,9 +12,9 @@ struct PokemonData: Decodable {
     let next: String
     let previous: String?
     let results: [Pokemon]
-}
-
-struct Pokemon: Decodable {
-    let name: String
-    let url: String
+    
+    struct Pokemon: Decodable {
+        let name: String
+        let url: String
+    }
 }
